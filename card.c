@@ -50,4 +50,4 @@ for(d y=1;y<C*3-1;y+=3){ f r=O;f g=O;f b=O;f U=O;
 for(d i=-1;i<2;i++){for(d j=-1;j<2;j++){d G=x+i;d F=y+j;
 r+=q[G][F][0];g+=q[G][F][1];b+=q[G][F][2];U+=q[G][F][3];}}
 f E=pow(log(U/9.)/log(m),1./2.2)*28.3;
-Z"%c%c%c",(d)(r*E),(d)(g*E),(d)(b*E));}}free(q);}
+Z"%c%c%c",(d)(r*E),(d)(g*E),(d)(b*E));}}}
