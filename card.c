@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-typedef float f;typedef int d; d R=600; d C=1050;
-f O=1.;f m=1.;f r(){return (f) rand()/RAND_MAX;}
+#define Z printf(
+typedef float f;typedef int d;d R=600;d C=1050;
+f O=1.;f m=1.;f r(){return (f)rand()/RAND_MAX;}
 f z(f x,f o){return fmod(fmod(x,o)+o,o);}
 f t=1./22.;f p=0.04;f N=0.;f H=0.5;
 void c(f (*q)[C*3][4]){f I[25][10]={
@@ -55,7 +56,7 @@ f J[25][10]={{N,-0.14,0.13,N,-3.3,O,p,O,0.8,0.24},
 {N,-0.14,0.13,N,9.4,O,p,0.49,0.33,0.62},
 {0.027,0.135,-0.1,0.036,8.5,1.7,p,O,0.8,0.24}};
 f t=r();f s=r();f w[3]={r(),r(),r()};d i=0;
-d S=22;f Y=0.4;f X=-0.15; f L=5000000;
+d S=22;f Y=0.4;f X=-0.15;f L=5000000;
 while(i<2*L){if(i==L){memmove(&I,&J,sizeof(J));
 S=25;Y=-0.1;}f a=r();f P=N;
 for(d z=0;z<S;z++){P=P+I[z][6];if(a<P){
@@ -63,17 +64,14 @@ f x_t=t*I[z][0]+s*I[z][1]+I[z][4];
 s=t*I[z][2]+s*I[z][3]+I[z][5];
 t=x_t;w[0]=(w[0]+I[z][7])*H;
 w[1]=(w[1]+I[z][8])*H;w[2]=(w[2]+I[z][9])*H;break;}}
-d W=(d) (z((O-s*0.1+Y),O)*R*3); d B=(d) (z(t*0.1*R/C+H+X,O)*C*3);
+d W=(d)(z((O-s*0.1+Y),O)*R*3);d B=(d)(z(t*0.1*R/C+H+X,O)*C*3);
 q[W][B][0]=w[0];q[W][B][1]=w[1];q[W][B][2]=w[2];
 q[W][B][3]+=1;if(q[W][B][3]>m){m=q[W][B][3];}
-i=i+1;}}d main(){printf("P6 %i %i 255 ",C,R);
-f (*q)[C*3][4];q=malloc(R*3 * sizeof *q);
+i=i+1;}}d main(){Z"P6 %i %i 255 ",C,R);
+f (*q)[C*3][4];q=malloc(R*3*50400);
 c(q);for(d x=1;x<R*3-1;x+=3){
-for(d y=1;y<C*3-1;y+=3){f r=O;
-f g=O;f b=O;f U=O;
-for(d i=-1;i<2;i++){for(d j=-1;j<2;j++){
-d G=x+i;d F=y+j;
-r+=q[G][F][0];g+=q[G][F][1];
-b+=q[G][F][2];U+=q[G][F][3];}}
+for(d y=1;y<C*3-1;y+=3){ f r=O;f g=O;f b=O;f U=O;
+for(d i=-1;i<2;i++){for(d j=-1;j<2;j++){d G=x+i;d F=y+j;
+r+=q[G][F][0];g+=q[G][F][1];b+=q[G][F][2];U+=q[G][F][3];}}
 f E=pow(log(U/9.0)/log(m),1./2.2)*28.3;
-printf("%c%c%c",(d) (r*E),(d) (g*E),(d) (b*E));}}free(q);}
+Z"%c%c%c",(d)(r*E),(d)(g*E),(d)(b*E));}}free(q);}
