@@ -68,17 +68,17 @@ w[1]=(w[1]+I[z][8])*H;w[2]=(w[2]+I[z][9])*H;
 break;}}f Z=0.1;q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][0]=w[0];
 q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][1]=w[1];
 q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][2]=w[2];
-q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][3]=q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][3]+1;
+q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][3]+=1;
 if(q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][3]>m){
 m=q[(d) (z((1.-s*Z+Y),1.)*R*3)][(d) (z(t*Z*R/C+H+X,1.)*C*3)][3];}
 i=i+1;}}d main(){printf("P6 %i %i 255 ",C,R);
 f (*q)[C*3][4];q=malloc(R*3 * sizeof *q);
 c(q);for(d x=1;x<R*3-1;x+=3){
 for(d y=1;y<C*3-1;y+=3){f r=O;
-f g=O;f b=O;f freq=O;
+f g=O;f b=O;f U=O;
 for(d i=-1;i<2;i++){for(d j=-1;j<2;j++){
-r=r+q[x+i][y+j][0];g=g+q[x+i][y+j][1];
-b=b+q[x+i][y+j][2];freq=freq+q[x+i][y+j][3];}}
-printf("%c%c%c",(d) (r/9.0*pow(log(freq/9.0)/log(m),1./2.2)*255.),
-(d) (g/9.0*pow(log(freq/9.0)/log(m),1./2.2)*255.),
-(d) (b/9.0*pow(log(freq/9.0)/log(m),1./2.2)*255.));}}free(q);}
+r+=q[x+i][y+j][0];g+=q[x+i][y+j][1];
+b+=q[x+i][y+j][2];U+=q[x+i][y+j][3];}}
+printf("%c%c%c",(d) (r/9.0*pow(log(U/9.0)/log(m),1./2.2)*255.),
+(d) (g/9.0*pow(log(U/9.0)/log(m),1./2.2)*255.),
+(d) (b/9.0*pow(log(U/9.0)/log(m),1./2.2)*255.));}}free(q);}
