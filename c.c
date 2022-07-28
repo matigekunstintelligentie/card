@@ -4,7 +4,7 @@ typedef float f;typedef int d;d R=600;d C=1050;
 f O=1.;
 f z(f x,f o){return fmod(fmod(x,o)+o,o);}f o=
 1/22.;f p=.04;f N=.0;f H=.5;f V=.25;f T=3.;void c(f 
-(*q)[C*3][4]){f e=.07;f b=.14;f I[25][6]={{N,
+(*q)[C][4]){f e=.07;f b=.14;f I[25][6]={{N,
 -b,b,N,-T,O},{N,-b,p,N,-2.2,1.5},{e,N,N,b,
 -T,2.},{e,N,N,b,-T,O},{p,-b,b,p,-O,O},{p,
 b,-b,p,-.8,1.6},{p,N,N,b,-O,O},{b,N,N,b,
@@ -29,10 +29,9 @@ while(i<2*L){if(i==L){k=p;
 memmove(&I,&J,sizeof(J));S=25;Y=-.1;}f a=(f)rand()/RAND_MAX;f P=
 N;for(d z=0;z<S;z++){P+=k;if(a<P){f G=t*I
 [z][0]+s*I[z][1]+I[z][4];s=t*I[z][2]+s*I[z][3]+I[
-z][5];t=G;break;}}d W=(d)(z((O-s*.1+Y),O)*R*3);
-d B=(d)(z(t*.1*R/C+H+X,O)*C*3);q[W][B][0]=O;q[W][
-B][1]=O;q[W][B][2]=O;i++;}}d main(){printf("P6 %i %i 255 ",C,R);f (*q)[C*3][4];
-q=malloc(R*144*C);c(q);for(d x=1;x<R*3-1;x+=3){for(
-d y=1;y<C*3-1;y+=3){f r=O;f g=O;f b=O;for(d
- i=-1;i<2;i++){for(d j=-1;j<2;j++){d G=x+i;d F=y+j;
-r+=q[G][F][0];g+=q[G][F][1];b+=q[G][F][2];}}f E=28.3;printf("%c%c%c",(d)(r*E),(d)(g*E),(d)(b*E));}}}
+z][5];t=G;break;}}d W=(d)(z((O-s*.1+Y),O)*R);
+d B=(d)(z(t*.1*R/C+H+X,O)*C);q[W][B][0]=O;q[W][
+B][1]=O;q[W][B][2]=O;i++;}}d main(){printf("P6 %i %i 255 ",C,R);f (*q)[C][4];
+q=malloc(R*144*C);c(q);
+for(d x=0;x<R;x++){for(d y=0;y<C;y++){
+f E=255.;printf("%c%c%c",(d)(q[x][y][0]*E),(d)(q[x][y][1]*E),(d)(q[x][y][2]*E));}}}
