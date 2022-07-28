@@ -21,12 +21,12 @@ malloc(R*144*C);f I[25][6]={{0,-b,b,0,-3,1},{
 b,b,p,7,1},{p,b,-b,p,7.3,Z},{p,0,0,b,7,1},{0,
 -b,b,0,8.5,1},{0,-b,b,0,9.5,1},{p,b,-b,p,8.5,
 Z}};d S=22;f t=H,s=H,Y=H,X=-b,L=R*C,k=o;for(d
- i=2*L;i--;){if(i==L){k=p;memcpy(&I,&J,R);
-S=25;Y=0;}f a=(f)rand()/RAND_MAX;f P=0;for(d 
-z=S;z--;){P+=k;if(a<P){f G=t*I[z][0]+s*I[z
-][1]+I[z][4];s=t*I[z][2]+s*I[z][3]+I[z][5];t=
-G;break;}}d W=(d)(z((1-s*.1+Y),1)*R);d B=(d)(
-z(t*.1*R/C+H+X,1)*C);q[W][B][0]=1;q[W][B][1]=
-1;q[W][B][2]=1;}for(d x=0;x<R;x++){for(d y=0;
-y<C;y++){f E=255;printf("%c%c%c",(d)(q[x][y][
-0]*E),(d)(q[x][y][1]*E),(d)(q[x][y][2]*E));}}}
+ i=2*L;i--;){if(i==L){k=p;memcpy(&I,&J,R);S=
+25;Y=0;}f a=(f)rand()/RAND_MAX;f P=0;for(d z=
+S;z--;){P+=k;if(a<P){f G=t*I[z][0]+s*I[z][1]+
+I[z][4];s=t*I[z][2]+s*I[z][3]+I[z][5];t=G;
+break;}}d W=(d)(z((s*.1+Y),1)*R);d B=(d)(z(
+1.7-t*.1*R/C,1)*C);q[W][B][0]=1;q[W][B][1]=
+1;q[W][B][2]=1;}for(d x=R;x--;){for(d y=C;y--
+;){f E=255;printf("%c%c%c",(d)(q[x][y][0]*E),
+(d)(q[x][y][1]*E),(d)(q[x][y][2]*E));}}}
