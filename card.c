@@ -1,7 +1,7 @@
 #include <stdlib.h> //gcc -o card card.c -lm	
 #include <math.h>	//./card > card.ppm
 typedef float f;typedef int d;d R=600;d C=1050;
-f O=1.;f m=1.;f r(){return (f)rand()/RAND_MAX;}
+f O=1.;f m=1.;
 f z(f x,f o){return fmod(fmod(x,o)+o,o);}f t=
 1/22.;f p=.04;f N=.0;f H=.5;f V=.25;void c(f 
 (*q)[C*3][4]){f e=.07;f b=.14;f I[25][10]={{N,
@@ -25,7 +25,7 @@ N,b,3.,1.2,p},{N,-b,b,N,4.4,O,p},{N,-b,b,N,5.6,O,p
 {p,N,N,b,7.,m,p},{N,-b,b,N,8.5,O,p},{N,-b,b,N,9.4,
 O,p},{p,b,-.1,p,8.5,1.7,p}};f t=H;f s=H;d i=0;d 
 S=22;f Y=.4;f X=-b;f L=R*C;while(i<2*L){if(i==L){
-memmove(&I,&J,sizeof(J));S=25;Y=-.1;}f a=r();f P=
+memmove(&I,&J,sizeof(J));S=25;Y=-.1;}f a=(f)rand()/RAND_MAX;f P=
 N;for(d z=0;z<S;z++){P+=I[z][6];if(a<P){f x_t=t*I
 [z][0]+s*I[z][1]+I[z][4];s=t*I[z][2]+s*I[z][3]+I[
 z][5];t=x_t;break;}}d W=(d)(z((O-s*.1+Y),O)*R*3);
