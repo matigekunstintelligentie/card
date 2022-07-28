@@ -23,19 +23,15 @@ N,b,3.,1.2,p},{N,-b,b,N,4.4,O,p},{N,-b,b,N,5.6,O,p
 },{.022,-b,p,p,5.4,1.52,p},{.031,b,-.086,p,4.5,
 1.76,p},{p,-b,b,p,6.75,O,p},{p,b,-b,p,7.25,1.6,p},
 {p,N,N,b,7.,m,p},{N,-b,b,N,8.5,O,p},{N,-b,b,N,9.4,
-O,p},{.03,b,-.1,p,8.5,1.7,p}};f D[4][3]={{m,.8,
-V},{m,H,.44},{.76,.33,.61},{H,.33,.62}};f t=
-H;f s=H;f w[3]={H,H,H};d i=0;d S=22;f Y=.4;f X=-b
-;f L=R*C;while(i<2*L){if(i==L){memmove(&I,&J
-,sizeof(J));S=25;Y=-.1;}f a=r();f P=N;for(d z=0;
-z<S;z++){P+=I[z][6];if(a<P){f x_t=t*I[z][0]+s*
-I[z][1]+I[z][4];s=t*I[z][2]+s*I[z][3]+I[z][5];t=
-x_t;w[0]=(w[0]+D[z%4][0])*H;w[1]=(w[1]+D[z%4][1])*
-H;w[2]=(w[2]+D[z%4][2])*H;break;}}d W=(d)(z((O-s*
-.1+Y),O)*R*3);d B=(d)(z(t*.1*R/C+H+X,O)*C*3);
-q[W][B][0]=w[0];q[W][B][1]=w[1];q[W][B][2]=w[2];
-q[W][B][3]+=1;if(q[W][B][3]>m){m=q[W][B][3];}i++;
-}}d main(){printf("P6 %i %i 255 ",C,R);f (*q)[C*3][4];
+O,p},{.03,b,-.1,p,8.5,1.7,p}};f t=H;f s=H;d i=0;d 
+S=22;f Y=.4;f X=-b;f L=R*C;while(i<2*L){if(i==L){
+memmove(&I,&J,sizeof(J));S=25;Y=-.1;}f a=r();f P=
+N;for(d z=0;z<S;z++){P+=I[z][6];if(a<P){f x_t=t*I
+[z][0]+s*I[z][1]+I[z][4];s=t*I[z][2]+s*I[z][3]+I[
+z][5];t=x_t;break;}}d W=(d)(z((O-s*.1+Y),O)*R*3);
+d B=(d)(z(t*.1*R/C+H+X,O)*C*3);q[W][B][0]=m;q[W][
+B][1]=m;q[W][B][2]=m;q[W][B][3]+=1;if(q[W][B][3]>
+m){m=q[W][B][3];}i++;}}d main(){printf("P6 %i %i 255 ",C,R);f (*q)[C*3][4];
 q=malloc(R*144*C);c(q);for(d x=1;x<R*3-1;x+=3){for(
 d y=1;y<C*3-1;y+=3){f r=O;f g=O;f b=O;f U=O;for(d
  i=-1;i<2;i++){for(d j=-1;j<2;j++){d G=x+i;d F=y+j;
