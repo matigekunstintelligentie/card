@@ -25,8 +25,7 @@ Z}};d S=22;f t=H,s=H,Y=H,X=-b,L=R*C,k=o;for(d
 25;Y=0;}f a=(f)rand()/RAND_MAX;f P=0;for(d z=
 S;z--;){P+=k;if(a<P){f G=t*I[z][0]+s*I[z][1]+
 I[z][4];s=t*I[z][2]+s*I[z][3]+I[z][5];t=G;
-break;}}d W=(d)(z((s*.1+Y),1)*R);d B=(d)(z(
-1.7-t*.1*R/C,1)*C);q[W][B][0]=1;q[W][B][1]=
-1;q[W][B][2]=1;}for(d x=R;x--;){for(d y=C;y--
-;){f E=255;printf("%c%c%c",(d)(q[x][y][0]*E),
-(d)(q[x][y][1]*E),(d)(q[x][y][2]*E));}}}
+break;}}d W=(d)(z((s*b+Y),1)*R);d B=(d)(z(
+1.7-t*e,1)*C);q[W][B][0]=1;}for(d x=R;x--;){
+for(d y=C;y--;){d E=(d)(q[x][y][0]*255);
+printf("%c%c%c",E,E,E);}}}
